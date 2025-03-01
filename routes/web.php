@@ -3,5 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    echo 'Hello guys! this is miy first laravel application';
+
+
+    //return view('welcome');
 });
