@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
-            $table ->string('name');
-            $table ->string('real_name');
-            $table ->string('Universe');
-            $table ->string('Gender');
-            $table ->string('picture');
+            $table -> string('name', 100);
+            $table -> string('real_name',40);
+            $table -> foreignid('universe_id') -> constrained ('universes') -> onDelete('cascade');
+            $table -> foreignid('gender_id') -> constrained ('genders') -> onDelete('cascade');
+            $table -> string('picture');
             $table->timestamps();
         });
     }
