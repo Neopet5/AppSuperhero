@@ -16,7 +16,11 @@ class UniverseSeeder extends Seeder
         Universe::create([
             
             'name' => 'Marvel',
+        ]);
 
+        Universe::create([
+            
+            'name' => 'DC',
         ]);
     }
 }
