@@ -22,9 +22,6 @@ class DatabaseSeeder extends Seeder
 
         $this -> call([
             GenderSeeder::class,
-        ]);
-
-        $this -> call([
             UniverseSeeder::class,
         ]);
 
