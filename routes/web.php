@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Universe;
+use App\Models\Superhero;
 use App\http\Controllers\GenderController;
+use App\http\Controllers\UniverseController;
+use App\http\Controllers\SuperheroController;
 
 Route::get('/', function () {
 
@@ -11,3 +14,9 @@ Route::get('/', function () {
 });
 
 Route::get('/gender',[GenderController::class,'index']);
+
+Route::resource('/universes',UniverseController::class);
+Route::resource('/superheroes',SuperheroController::class);
+
+//Route::get('/universes',[UniverseController::class,'index']);
+
