@@ -52,7 +52,7 @@ class SuperheroController extends Controller
      */
     public function show(string $id)
     {
-        $superheroes = Superheroe::find(101);
+        $superheroes = Superhero::find(101);
         return view('superheroes.show',compact('superhero'));
     }
 
