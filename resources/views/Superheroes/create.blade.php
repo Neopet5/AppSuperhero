@@ -10,17 +10,26 @@
 
     <form action = "{{ route('superheroes.store')}}" method = "POST">
     @csrf
-        <label for = "gender_id">Gender </label>
-        <select name = "gender_id">
+        <label for = "gender">Gender </label>
+        <select name = "gender_id" id ="gender">
             @foreach($genders as $gender)
             <option value = "{{ $gender->id }}">{{$gender->name}}</option>
             @endforeach
+        </select>
+
+        <label for="universe">Universe</label>
+        <select name="universe_id" id = "universe">
+            @foreach($universes as $universe)
+                <option value="{{ $universe->id }}">{{$universe->name}}</option>
+            @endforeach   
         </select>
 
         <br><br>
 
         <label for="real_name">Real Name</label>
         <input type="text" name="real_name">
+        <label for="">Picture</label>
+        <input type="text" name="Picture">
         
         <br><br>
 

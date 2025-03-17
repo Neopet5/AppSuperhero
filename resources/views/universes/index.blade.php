@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universe Table</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
         <h1>Universe</h1>
@@ -21,13 +20,13 @@
 
             <tbody>
 
-            @foreach($universes as $item)
+            @foreach($universes as $universe)
 
                 <tr>
 
-                <td>{{ $item -> id}} </td>
+                <td>{{ $universe -> id}} </td>
 
-                <td>{{ $item -> name}}</td>
+                <td>{{ $universe -> name}}</td>
 
                 </tr>
 

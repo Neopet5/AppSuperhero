@@ -8,12 +8,15 @@
 <body>
     <h1>Create universe</h1>
 
-    <form action = "{{ route('universes.store')}}" method = "post">
+    <form action = "{{ route('universes.store')}}" method = "POST">
         @csrf
-        <label for = "">Name</label>
+        <label for = "name">Name</label>
+        
         <input type = "text" name = "name">
 
         <input type = "submit" value = "Create Universe">
+
+        <button type="submit">Save</button>
 
 </form>
 

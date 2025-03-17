@@ -16,7 +16,8 @@ class SuperheroController extends Controller
      */
     public function index()
     {
-        //
+    $superheroes = Superhero::all();
+    return view('superheroes.index', compact('superheroes'));//
     }
 
     /**
@@ -25,7 +26,8 @@ class SuperheroController extends Controller
     public function create()
     {
        $genders = Gender::select('id', 'name')->get();
-       return view('superheroes.create',compact('genders')); //
+       $universes = Universe::select('id','name')->get();
+       return view('superheroes.create',compact('genders', 'universes')); //
     }
 
     /**
@@ -39,7 +41,7 @@ class SuperheroController extends Controller
             'real_name' => $request ->real_name,
             'universe_id' => 1,
             'name' => 'Spiderman',
-            'picture' => '',
+            'picture' => $request->picture,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -52,7 +54,7 @@ class SuperheroController extends Controller
      */
     public function show(string $id)
     {
-        $superheroes = Superhero::find(101);
+        $superhero = Superhero::findorfail($id);
         return view('superheroes.show',compact('superhero'));
     }
 

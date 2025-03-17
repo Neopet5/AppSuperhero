@@ -13,10 +13,9 @@ Route::get('/', function () {
     dump(Universe::all());
 });
 
-Route::get('/gender',[GenderController::class,'index']);
-
 Route::resource('/universes',UniverseController::class);
 Route::resource('/superheroes',SuperheroController::class);
+Route::resource('/genders',GenderController::class);
 
 //Route::get('/universes',[UniverseController::class,'index']);
 
