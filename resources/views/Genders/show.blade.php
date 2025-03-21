@@ -6,7 +6,7 @@
     <title>Gender</title>
 </head>
 <body>
-<h1>Gender</h1>
+<h1>Genders <Table></Table></h1>
 
     <table>
         <thead>
@@ -18,10 +18,15 @@
 
         <tbody>
             <tr>
-                <td>{{$genders->id}}</td>
-                <td>{{$genders->name}}</td>
+                <td>{{$gender->id}}</td>
+                <td>{{$gender->name}}</td>
             </tr>
         </tbody>
     </table>
+
+    <br>
+
+    <a href="{{ route('genders.index') }}">Back to List</a>
+
 </body>
 </html>

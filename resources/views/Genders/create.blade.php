@@ -6,6 +6,7 @@
     <title>Genders</title>
 </head>
 <body>
+    <h1>Create Gender</h1>
 <form action="{{ route('genders.store') }}" method="POST">
     @csrf
     <label for="name">Gender Name:</label>

@@ -10,7 +10,7 @@ class GenderController extends Controller
 
     $gender = Gender::all();
 
-    return view('gender', compact('gender'));
+    return view('genders.index', compact('gender'));
     }
 
 public function create()
@@ -36,7 +36,7 @@ public function store(Request $request)
 public function show(string $id)
 {
 
-$universe = Gender::findOrFail($id);
+$gender = Gender::findOrFail($id);
 
 return view('genders.show', compact('gender'));
 
@@ -47,7 +47,8 @@ return view('genders.show', compact('gender'));
  */
 public function edit(string $id)
 {
-    //
+    $gender = Gender::findOrFail($id);
+    return view('genders.edit', compact('gender'));
 }
 
 /**
@@ -55,7 +56,13 @@ public function edit(string $id)
  */
 public function update(Request $request, string $id)
 {
-    //
+    $gender = Gender::find($id);
+    $gender->update([
+        'name' => $request ->name,
+
+    ]);
+
+    return to_route ('genders.index');
 }
 
 /**
@@ -63,6 +70,8 @@ public function update(Request $request, string $id)
  */
 public function destroy(string $id)
 {
-    //
+    $gender = Gender::find($id);
+    $gender -> delete();
+    return to_route('genders.index');
 }
 }

@@ -16,8 +16,6 @@
 
         <input type = "submit" value = "Create Universe">
 
-        <button type="submit">Save</button>
-
 </form>
 
 </body>

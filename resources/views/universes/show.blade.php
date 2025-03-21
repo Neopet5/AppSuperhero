@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Universes</title>
 </head>
 
 <body>
 
-<h1>{{ $universe->name }}</h1>
+<h1>Universes Table</h1>
 
-<a href="{{ route('universes.index') }}">Back to List</a>
+<table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{$universe->id}}</td>
+                
+                <td>{{$universe->name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <a href="{{ route('universes.index') }}">Back to List</a>
 
 
 </body>

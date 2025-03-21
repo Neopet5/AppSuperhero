@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create superhero</title>
+    <title>Create a new Superhero</title>
 </head>
 <body>
     <h1>Create Superhero</h1>
@@ -28,12 +28,25 @@
 
         <label for="real_name">Real Name</label>
         <input type="text" name="real_name">
+        
+        <br><br>
+
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        
+        <br><br>
+
         <label for="">Picture</label>
-        <input type="text" name="Picture">
+        <input type="text" name="picture">
         
         <br><br>
 
         <input type = "submit" value = "Create">
     </form>
+
+    <br>
+
+    <a href="{{ route('superheroes.index') }}">Back to List</a>
+
 </body>
 </html>

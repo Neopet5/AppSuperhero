@@ -7,6 +7,15 @@
 </head>
 <body>
         <h1>Universe</h1>
+
+        <hr>
+
+        <a href="{{ route('universes.create') }}">Create a new Universe</a>
+
+        <hr>
+
+        <br>
+
         <table>
             <thead>
                 <tr>
@@ -20,13 +29,29 @@
 
             <tbody>
 
-            @foreach($universes as $universe)
+            @foreach($universes as $item)
 
                 <tr>
 
-                <td>{{ $universe -> id}} </td>
+                <td>{{ $item -> id}} </td>
 
-                <td>{{ $universe -> name}}</td>
+                <td>{{ $item -> name}}</td>
+
+                <td>
+
+                <a href = "{{route ('universes.show',$item->id)}}">Show</a>
+
+                <a href = "{{route ('universes.edit',$item->id)}}">Edit</a>
+
+                <form action="{{ route('universes.destroy', $item->id) }}" method="post">
+
+                        @csrf
+
+                        @method('delete')
+
+                        <input type="submit" value="Delete" onclick="return confirm('Are you really sure? There is no way back')">
+          </form>
+            </td>
 
                 </tr>
 
