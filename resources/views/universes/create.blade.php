@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Universe</title>
-</head>
-<body>
-    <h1>Create universe</h1>
+@extends('layouts.main')
 
-    <form action = "{{ route('universes.store')}}" method = "POST">
+@section('title', 'Create Universe')
+
+@section('content')
+    <h1>Create a new Universe</h1>
+    <form action="{{ route('universes.store') }}" method="POST">
         @csrf
-        <label for = "name">Name</label>
-        
-        <input type = "text" name = "name">
-
-        <input type = "submit" value = "Create Universe">
-
-</form>
-
-</body>
-</html>
+        <label for="name">NUniverse Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit">Guardar</button>
+    </form>
+@endsection

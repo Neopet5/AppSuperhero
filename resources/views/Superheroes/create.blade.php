@@ -1,52 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new Superhero</title>
-</head>
-<body>
-    <h1>Create Superhero</h1>
+@extends('layouts.main')
 
-    <form action = "{{ route('superheroes.store')}}" method = "POST">
-    @csrf
-        <label for = "gender">Gender </label>
-        <select name = "gender_id" id ="gender">
+@section('title', 'Create Superheroe')
+
+@section('content')
+    <h1>Crear New Superheroe</h1>
+
+    <form action="{{ route('superheroes.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Real Name:</label>
+        <input type="text" name="real_name" required><br>
+
+        <label>Gender:</label>
+        <select name="gender_id">
             @foreach($genders as $gender)
-            <option value = "{{ $gender->id }}">{{$gender->name}}</option>
+                <option value="{{ $gender->id }}">{{ $gender->name }}</option>
             @endforeach
-        </select>
+        </select><br>
 
-        <label for="universe">Universe</label>
-        <select name="universe_id" id = "universe">
+        <label>Universe:</label>
+        <select name="universe_id">
             @foreach($universes as $universe)
-                <option value="{{ $universe->id }}">{{$universe->name}}</option>
-            @endforeach   
-        </select>
+                <option value="{{ $universe->id }}">{{ $universe->name }}</option>
+            @endforeach
+        </select><br>
 
-        <br><br>
+        <label>Imagen:</label>
+        <input type="file" name="picture"><br><br>
 
-        <label for="real_name">Real Name</label>
-        <input type="text" name="real_name">
-        
-        <br><br>
-
-        <label for="name">Name</label>
-        <input type="text" name="name">
-        
-        <br><br>
-
-        <label for="">Picture</label>
-        <input type="text" name="picture">
-        
-        <br><br>
-
-        <input type = "submit" value = "Create">
+        <button type="submit">Guardar</button>
     </form>
-
-    <br>
-
-    <a href="{{ route('superheroes.index') }}">Back to List</a>
-
-</body>
-</html>
+@endsection
