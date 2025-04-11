@@ -5,20 +5,14 @@
 @section('content')
     <h1>Edit Gender</h1>
 
-    <form action="{{ route('genders.update', $gender->id) }}" method="POST">
+    <form action="{{ route('gender.update', $gender->id) }}" method="POST">
         @csrf
-        @method('PATCH')
-
-        <label for="name">Gender Name:</label>
-        <input type="text" name="name" value="{{ $gender->name }}" required>
+        @method('PUT')
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ $gender->name }}" required>
 
         <br><br>
 
-        <input type="submit" value="Actualizar">
+        <button type="submit">Update</button>
     </form>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
-
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76

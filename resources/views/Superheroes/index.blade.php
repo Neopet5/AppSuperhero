@@ -3,7 +3,7 @@
 @section('title', 'SuperHeroes')
 
 @section('content')
-    <h1>SuperHeroes</h1>
+    <h1>SuperHeroes List</h1>
     <a href="{{ route('superheroes.create') }}">Create SuperHero</a>
 
     <table>
@@ -45,8 +45,4 @@
             @endforeach
         </tbody>
     </table>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76

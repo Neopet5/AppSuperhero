@@ -11,10 +11,6 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-<<<<<<< HEAD
-=======
-                <th>Actions</th>
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76
             </tr>
         </thead>
         <tbody>
@@ -35,8 +31,4 @@
             @endforeach
         </tbody>
     </table>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76

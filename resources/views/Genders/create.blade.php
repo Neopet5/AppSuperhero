@@ -1,18 +1,17 @@
 @extends('layouts.main')
 
-@section('title', 'Create gender')
+@section('title', 'Create Gender')
 
 @section('content')
-    <h1>Add a New Gender</h1>
+    <h1>Create Gender</h1>
 
-    <form action="{{ route('genders.store') }}" method="POST">
+    <form action="{{ route('gender.store') }}" method="POST">
         @csrf
-        <label for="name">Gender Name:</label>
-        <input type="text" name="name" required>
-        <button type="submit">Guardar</button>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <br><br>
+
+        <button type="submit">Create</button>
     </form>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76

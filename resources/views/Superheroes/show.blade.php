@@ -11,4 +11,6 @@
     @if($superhero->picture)
         <img src="{{ asset('storage/' . $superhero->picture) }}" width="200">
     @endif
+    <br> <br>
+    <a href="{{ route('superheroes.index') }}">Back to List</a>
 @endsection
