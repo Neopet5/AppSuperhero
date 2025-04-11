@@ -1,60 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit superhero</title>
-</head>
-<body>
-    <h1>Edit a Superhero</h1>
+@extends('layouts.main')
 
-    <form action="{{ route('superheroes.update', $superhero->id) }}" method="POST">
+@section('title', 'Edit Superheroe')
+
+@section('content')
+    <h1>Edit Superheroe</h1>
+
+    <form action="{{ route('superheroes.update', $superhero->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('patch')
-        
-        <label for="gender">Gender</label>
-        <select name="gender_id" id="gender">
+        @method('PATCH')
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ $superhero->name }}" required><br>
+
+        <label>Real Name:</label>
+        <input type="text" name="real_name" value="{{ $superhero->real_name }}" required><br>
+
+        <label>Género:</label>
+        <select name="gender_id">
             @foreach($genders as $gender)
-                <option value="{{ $gender->id }}" 
-                    @if ($gender->id == $superhero->gender_id)
-                        selected
-                    @endif    
-                >{{ $gender->name }}</option>
+                <option value="{{ $gender->id }}" {{ $superhero->gender_id == $gender->id ? 'selected' : '' }}>
+                    {{ $gender->name }}
+                </option>
             @endforeach
-        </select>
+        </select><br>
 
-        <label for="universe">Universe</label>
-        <select name="universe_id" id="universe">
-            @foreach($universes as $universe) 
-                <option value="{{ $universe->id }}" 
-                    @if ($universe->id == $superhero->universe_id)
-                        selected
-                    @endif    
-                >{{ $universe->name }}</option>
+        <label>Universe:</label>
+        <select name="universe_id">
+            @foreach($universes as $universe)
+                <option value="{{ $universe->id }}" {{ $superhero->universe_id == $universe->id ? 'selected' : '' }}>
+                    {{ $universe->name }}
+                </option>
             @endforeach
-        </select>
+        </select><br>
 
-        <br><br>
+        <label>Imagen:</label>
+        <input type="file" name="picture"><br><br>
 
-        <label for="real_name">Real Name</label>
-        <input type="text" name="real_name" value="{{ $superhero->real_name }}">
-
-        <br><br>
-
-        <label for="name">Name</label>
-        <input type="text" name="name" value="{{ $superhero->name }}">
-
-        <br><br>
-
-        <label for="picture">Picture</label>
-        <input type="text" name="picture" value="{{ $superhero->picture }}">
-
-        <br><br>
-
-        <input type="submit" value="Edit">
+        <button type="submit">Actualizar</button>
     </form>
-
-    <br>
-
-</body>
-</html>
+@endsection

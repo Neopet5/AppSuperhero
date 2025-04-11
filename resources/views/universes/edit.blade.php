@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Universe</title>
-</head>
-<body>
-    <h1>Edit Universe</h1>
+@extends('layouts.main')
 
+@section('title', 'Editar Universo')
+
+@section('content')
+    <h1>Editar Universo</h1>
     <form action="{{ route('universes.update', $universe->id) }}" method="POST">
         @csrf
         @method('PATCH')
@@ -19,8 +15,4 @@
 
         <input type="submit" value="Update">
     </form>
-
-    <br>
-</body>
-</html>
-
+@endsection

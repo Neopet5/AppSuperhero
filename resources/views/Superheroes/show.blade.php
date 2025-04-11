@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero Card</title>
-</head>
-<body>
-    <h1>Superhero Card</h1>
+@extends('layouts.main')
 
-    <p>Name: {{ $superhero->name }}</p>
-        
-        <p>Real Name: {{ $superhero->real_name }}</p>
-        
-        <p>Gender: {{ $superhero->gender_id }},  {{ $superhero->gender->name }}</p>
+@section('title', $superhero->name)
 
-        <p>Universe: {{ $superhero->universe_id }},  {{ $superhero->universe->name}}</p>
+@section('content')
+    <h1>{{ $superhero->name }}</h1>
+    <p><strong>Real Name:</strong> {{ $superhero->real_name }}</p>
+    <p><strong>Gender:</strong> {{ $superhero->gender->name }}</p>
+    <p><strong>Universe:</strong> {{ $superhero->universe->name }}</p>
 
-        <p>Picture: {{ $superhero->picture }}</p>
-
-                 <a href="{{ route('superheroes.index') }}">Back to List</a>
-</body>
-</html>
+    @if($superhero->picture)
+        <img src="{{ asset('storage/' . $superhero->picture) }}" width="200">
+    @endif
+@endsection

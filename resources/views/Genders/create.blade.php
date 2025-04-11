@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genders</title>
-</head>
-<body>
-    <h1>Create Gender</h1>
-<form action="{{ route('genders.store') }}" method="POST">
-    @csrf
-    <label for="name">Gender Name:</label>
-    <input type="text" name="name" required>
-    <button type="submit">Save</button>
-</form>
+@extends('layouts.main')
 
-</body>
-</html>
+@section('title', 'Create gender')
+
+@section('content')
+    <h1>Add a New Gender</h1>
+
+    <form action="{{ route('genders.store') }}" method="POST">
+        @csrf
+        <label for="name">Gender Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit">Guardar</button>
+    </form>
+@endsection
