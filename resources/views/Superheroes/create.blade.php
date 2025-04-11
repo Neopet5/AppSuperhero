@@ -33,11 +33,10 @@
         <button type="submit">Guardar</button>
     </form>
 @endsection
-<<<<<<< HEAD
+
 
     <a href="{{ route('superheroes.index') }}">Back to List</a>
 
 </body>
 </html>
-=======
->>>>>>> 3227cab844036346eab5256005f9cb9212456e76
+
