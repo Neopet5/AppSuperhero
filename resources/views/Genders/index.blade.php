@@ -11,10 +11,18 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+<<<<<<< HEAD
             </tr>
         </thead>
         <tbody>
             @foreach($gender as $item)
+=======
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($genders as $item)
+>>>>>>> 3227cab844036346eab5256005f9cb9212456e76
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>

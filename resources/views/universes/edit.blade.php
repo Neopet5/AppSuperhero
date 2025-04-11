@@ -15,4 +15,9 @@
 
         <input type="submit" value="Update">
     </form>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+
+>>>>>>> 3227cab844036346eab5256005f9cb9212456e76

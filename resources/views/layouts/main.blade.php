@@ -18,4 +18,8 @@
         @yield('content')
     </main>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3227cab844036346eab5256005f9cb9212456e76

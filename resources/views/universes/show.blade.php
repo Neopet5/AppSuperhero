@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+<<<<<<< HEAD
 @section('title', 'SuperHero Details')
 
 @section('content')
@@ -19,3 +20,15 @@
 
     <a href="{{ route('superheroes.index') }}">Back to List</a>
 @endsection
+=======
+@section('title', 'Universe Details')
+
+@section('content')
+    <h1>Universes Table</h1>
+
+    <p><strong>Id:</strong> {{ $universe->id }}</p>
+    <p><strong>Name:</strong> {{ $universe->name }}</p>
+
+    <a href="{{ route('universes.index') }}">Back to List</a>
+@endsection
+>>>>>>> 3227cab844036346eab5256005f9cb9212456e76
