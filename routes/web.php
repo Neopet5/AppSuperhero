@@ -2,12 +2,21 @@
 use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\GenderController;
 use App\Http\Controllers\SuperheroController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/form', function () {
+    return view('form'); // 'form' es el nombre del archivo de la vista, sin la extensión .blade.php
+});
+
+Route::post('/upload',[FileController::class,'upload'])->name('upload');
+
+Route::post('download', [FileController::class, 'download'])->name('download');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
